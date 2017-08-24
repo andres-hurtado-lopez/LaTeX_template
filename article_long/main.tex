@@ -1,0 +1,38 @@
+\documentclass[letterpaper,12pt,spanish,oneside,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec/titletoc}
+
+%Hipervinculos para saltar en el PDF
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{graphicx}
+\dottedcontents{section}[1.5em]{\bfseries}{1.3em}{.6em}
+\title{Carticas Pa La Mona}
+\author{Andrés Hurtado López}
+\date{2017}
+
+%El titulo de la tabla de contenido esta modificado porque no se
+%esta utilizando el paquete BABEL para que traduzca los
+%titulos automaticos
+\renewcommand{\contentsname}{Listado de Cartas}
+
+%El titulo del resumen esta modificado porque no se esta utilizando el paquete BABEL
+%para que traduzca los titulos automaticos
+\renewcommand{\abstractname}{Resumen}
+\begin{document}
+\maketitle
+\begin{abstract}
+Resumen principal
+\end{abstract}
+\tableofcontents
+
+%Las secciones estan incluidas por aparte del documento princial
+\input{textos/1}
+\input{textos/2}
+\input{textos/3}
+\end{document}

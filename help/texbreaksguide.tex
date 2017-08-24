@@ -1,0 +1,74 @@
+\documentclass[letterpaper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\title{LaTeX Line and Page Breaking}
+\date{}
+\author{Andrés Hurtado López}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+The first thing LaTeX does when processing ordinary text is to translate your input file into a string of glyphs and spaces. To produce a printed document, this string must be broken into lines, and these lines must be broken into pages. In some environments, you do the line breaking yourself with the \textbackslash\textbackslash~command, but LaTeX usually does it for you. The available commands are:
+\begin{itemize}
+\item \textbf{\textbackslash  \textbackslash}~ start a new paragraph.
+\item \textbf{\textbackslash \textbackslash *} start a new line but not a new paragraph.
+\item \textbf{\textbackslash -} OK to hyphenate a word here.
+\item \textbf{\textbackslash cleardoublepage} flush all material and start a new page, start new odd numbered page.
+\item \textbf{\textbackslash clearpage} plush all material and start a new page.
+\item \textbf{\textbackslash  hyphenation} enter a sequence pf exceptional hyphenations.
+\item \textbf{\textbackslash linebreak} allow to break the line here.
+\item \textbf{\textbackslash newline} request a new line.
+\item \textbf{\textbackslash newpage} request a new page.
+\item \textbf{\textbackslash nolinebreak} no line break should happen here.
+\item \textbf{\textbackslash nopagebreak} no page break should happen here.
+\item \textbf{\textbackslash pagebreak} encourage page break.
+\end{itemize}
+\section{\textbackslash \textbackslash}
+\begin{quote}
+\textbackslash \textbackslash [ * ] [ extra-space ]
+\end{quote}
+The \textbackslash \textbackslash~ command tells LaTeX to start a new line. It has an optional argument, extra-space, that specifies how much extra vertical space is to be inserted before the next line. This can be a negative amount.
+The \textbackslash \textbackslash * command is the same as the ordinary \\ command except that it tells LaTeX not to start a new page after the line.
+\section{\textbackslash -}
+
+The \textbackslash - command tells LaTeX that it may hyphenate the word at that point. LaTeX is very good at hyphenating, and it will usually find all correct hyphenation points. The \textbackslash - command is used for the exceptional cases, as e.g.
+ man\textbackslash-u\textbackslash-script
+\section{\textbackslash cleardoublepage
+}
+The \textbackslash cleardoublepage command ends the current page and causes all figures and tables that have so far appeared in the input to be printed. In a two-sided printing style, it also makes the next page a right-hand (odd-numbered) page, producing a blank page if necessary.
+\section{\textbackslash clearpage}
+
+The \textbackslash clearpage command ends the current page and causes all figures and tables that have so far appeared in the input to be printed.
+\textbackslash hyphenation
+
+\section{\textbackslash hyphenation\{words\}}
+The \textbackslash hyphenation command declares allowed hyphenation points, where words is a list of words, separated by spaces, in which each hyphenation point is indicated by a - character, e.g.
+  \textbackslash hyphenation\{man-u-script man-u-stripts ap-pen-dix\}
+\section{\textbackslash linebreak}
+\begin{quote}
+\textbackslash linebreak[number]
+\end{quote}
+The \textbackslash linebreak command tells LaTeX to break the current line at the point of the command. With the optional argument, number, you can convert the \textbackslash \textbackslash linebreak command from a demand to a request. The number must be a number from 0 to 4. The higher the number, the more insistent the request is.
+The \textbackslash linebreak command causes LaTeX to stretch the line so it extends to the right margin.
+\section{\textbackslash newline}
+
+The \textbackslash newline command breaks the line right where it is. The \textbackslash newline command can be used only in paragraph mode.
+\section{\textbackslash newpage}
+
+The \textbackslash newpage command ends the current page.
+\section{\textbackslash nolinebreak}
+\begin{quote}
+\textbackslash nolinebreak[number]
+\end{quote}
+The \textbackslash nolinebreak command prevents LaTeX from breaking the current line at the point of the command. With the optional argument, number, you can convert the \textbackslash nolinebreak command from a demand to a request. The number must be a number from 0 to 4. The higher the number, the more insistent the request is.
+\section{\textbackslash nopagebreak}
+\begin{quote}
+\textbackslash nopagebreak[number]
+\end{quote}
+The \textbackslash nopagebreak command prevents LaTeX form breaking the current page at the point of the command. With the optional argument, number, you can convert the \textbackslash nopagebreak command from a demand to a request. The number must be a number from 0 to 4. The higher the number, the more insistent the request is.
+\section{\textbackslash pagebreak}
+\begin{quote}
+\textbackslash pagebreak[number]
+\end{quote}
+The \textbackslash pagebreak command tells LaTeX to break the current page at the point of the command. With the optional argument, number, you can convert the \textbackslash pagebreak command from a demand to a request. The number must be a number from 0 to 4. The higher the number, the more insistent the request is.
+
+\end{document}
